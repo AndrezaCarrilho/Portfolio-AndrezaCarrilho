@@ -119,9 +119,9 @@ const projects = [
     desc: "Sistema de gestão condominial completo com painel administrativo.", 
     tags: ["React", "Node.js", "Vercel"], 
     featured: true, 
-    image: "/projeto.jpg",
-    links: [
-      { type: "site", url: "#", label: "Vercel" }
+    image: "/projeto.png",
+    links: [{ type: "github", url: "https://github.com/AndrezaCarrilho/admin-condominio", label: "GitHub" },
+      { type: "site", url: "https://admin-condominio-fvs8.vercel.app/", label: "Vercel" }
     ]
   },
   {
@@ -131,9 +131,9 @@ const projects = [
     desc: "Desenvolvimento de soluções reais em equipe multidisciplinar.", 
     tags: ["Scrum", "React", "Inovação"], 
     featured: false, 
-    image: "/projeto2.jpg",
+    image: "/claroresidencia.png",
     links: [
-      { type: "github", url: "https://github.com/AndrezaCarrilho", label: "GitHub" }
+      { type: "github", url: "https://github.com/Vanessa867/Front_Squad36_Claro", label: "GitHub" }
     ]
   },
   {
@@ -143,21 +143,21 @@ const projects = [
     desc: "Aplicativo mobile desenvolvido para apresentação de currículo interativo.", 
     tags: ["React Native", "Expo", "Mobile"], 
     featured: false, 
-    image: "/projeto3.jpg",
+    image: "/luizeapp.png",
     links: [
-      { type: "github", url: "https://github.com/AndrezaCarrilho", label: "GitHub" }
+      { type: "github", url: "https://github.com/AndrezaCarrilho/AndrezaCarrilho-Portfolio", label: "GitHub" }
     ]
   },
   {
     id: 4, 
-    title: "App GestCond", 
+    title: "App GestCondo", 
     category: "Mobile", 
-    desc: "Versão mobile do sistema de condomínio com reconhecimento facial.", 
-    tags: ["React Native", "IA", "Expo"], 
+    desc: "Versão mobile do sistema de condomínio.", 
+    tags: ["React Native", "Expo"], 
     featured: false, 
-    image: "/projeto3.jpg",
+    image: "/gestcondoapp.png",
     links: [
-      { type: "github", url: "https://github.com/AndrezaCarrilho", label: "GitHub" }
+      { type: "github", url: "https://github.com/AndrezaCarrilho/gestcond-expo-app", label: "GitHub" }
     ]
   },
   {
@@ -167,9 +167,10 @@ const projects = [
     desc: "API RESTful para gerenciamento e distribuição de dados curriculares.", 
     tags: ["Node.js", "API", "Vercel"], 
     featured: false, 
-    image: "/projeto.jpg",
+    image: "/cv-projeto-BACKEND.png",
     links: [
-      { type: "site", url: "#", label: "Vercel" }
+      { type: "github", url: "https://github.com/AndrezaCarrilho/cv_Andreza-API", label: "GitHub" },
+      { type: "site", url: "https://cv-andreza-api.vercel.app", label: "Vercel" }
     ]
   },
   {
@@ -179,10 +180,10 @@ const projects = [
     desc: "Backend para aplicação de diário com autenticação e segurança.", 
     tags: ["Node.js", "Express", "PostgreSQL"], 
     featured: false, 
-    image: "/projeto.jpg",
+    image: "/projeto2.png",
     links: [
-      { type: "github", url: "https://github.com/AndrezaCarrilho", label: "GitHub" },
-      { type: "site", url: "#", label: "Vercel" }
+      { type: "github", url: "https://github.com/AndrezaCarrilho/Projeto_AOS-diario-pessoal", label: "GitHub" },
+      { type: "site", url: "https://projeto-aos-diario-pessoal.vercel.app/", label: "Vercel" }
     ]
   },
   {
@@ -192,9 +193,9 @@ const projects = [
     desc: "Este site! Desenvolvido com Next.js, Tailwind e muita animação.", 
     tags: ["Next.js", "React", "Tailwind"], 
     featured: true, 
-    image: "/projeto2.jpg",
+    image: "/projetoportifolio.png",
     links: [
-      { type: "github", url: "https://github.com/AndrezaCarrilho", label: "GitHub" },
+      { type: "github", url: "https://github.com/AndrezaCarrilho/Portfolio-AndrezaCarrilho", label: "GitHub" },
       { type: "figma", url: "#", label: "Figma" }
     ]
   }
@@ -304,7 +305,7 @@ export default function PortfolioPage() {
             <div className="w-full md:w-1/2 flex justify-center relative animate-float">
                <div className="w-[80%] pb-[80%] relative bg-pink-200 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] rotate-6 shadow-xl overflow-hidden">
                   <img 
-                    src="/fotoperfil.jpg" 
+                    src="/20251201_114644.jpg" 
                     alt="Foto de Andreza Carrilho" 
                     className="absolute inset-0 w-full h-full object-cover -rotate-6 scale-110"
                   />
@@ -400,7 +401,15 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-3">{project.title}</h3>
                 <p className="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3 flex-grow">{project.desc}</p>
-                
+                {/* --- ÁREA DAS TECNOLOGIAS--- */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="px-2 py-1 bg-pink-50 text-pink-600 text-[10px] uppercase font-bold rounded-md border border-pink-100">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {/* ------------------------------------------ */}
                 <div className="flex flex-wrap gap-3 mt-auto pt-6 border-t border-slate-50">
                    {project.links.map((link, i) => (
                      <a 
