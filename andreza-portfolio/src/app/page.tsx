@@ -5,6 +5,7 @@ import {
   Github, 
   Linkedin, 
   Mail, 
+  Youtube,
   Code2, 
   Server, 
   Database, 
@@ -17,6 +18,7 @@ import {
   Palette,
   Sparkles,
   Search,
+  Figma,
   Sigma,
   MessageCircle, // Ícone para WhatsApp
   FileDown      // Ícone para Download do CV
@@ -84,42 +86,49 @@ export default function PortfolioPage() {
     { 
       id: 1, 
       title: "GestCond Web", 
-      category: "Full-Stack", 
-      desc: "Gestão condominial completa com React e Node.js.", 
+      category: "Front-End", 
+      desc: "Plataforma web de gestão condominial desenvolvida como projeto integrador na UNICAP. Front-end com Next.js, TypeScript e Tailwind CSS.", 
       image: "/projeto.png", 
-      tags: ["React", "Node", "Vercel"],
+      tags: ["React", "Next.js", "Vercel"],
       githubUrl: "https://github.com/AndrezaCarrilho/admin-condominio",
-      deployUrl: "https://admin-condominio-fvs8.vercel.app/"
+      deployUrl: "https://admin-condominio-fvs8.vercel.app/",
+      status: "Concluído" 
     },
     { 
       id: 2, 
-      title: "Residência Porto Digital", 
-      category: "Inovação", 
-      desc: "Squad Claro & Adecco: Soluções em Front-end e Scrum.", 
-      image: "/claroresidencia.png", 
-      tags: ["Scrum", "React", "Porto Digital"],
-      githubUrl: "https://github.com/Vanessa867/Front_Squad36_Claro",
-      deployUrl: "#"
+      title: "API Diário Pessoal", 
+      category: "Back-End", 
+      desc: "API REST com autenticação JWT, cadastro de usuários e gerenciamento de cadernos e humores. Utilizei Node.js, Express, PostgreSQL hospedado no Render.",
+      image: "/projeto2.png", 
+      tags: ["Node.js", "Express", "PostgreSQL", "JWT", "bcrypt", "Render"],
+      githubUrl: "https://github.com/AndrezaCarrilho/Projeto_AOS-diario-pessoal",
+      deployUrl: "https://projeto-aos-diario-pessoal.vercel.app/",
+      videoUrl: "https://youtu.be/bSKtVYOPPI8?si=yYlp3BKNpnWfW9Mo",
+      status: "Concluído"
     },
     { 
       id: 3, 
-      title: "Curriculum Mobile", 
-      category: "Mobile", 
-      desc: "App interativo em React Native para portfólio digital.", 
-      image: "/luizeapp.png", 
-      tags: ["Expo", "React Native"],
-      githubUrl: "https://github.com/AndrezaCarrilho/AndrezaCarrilho-Portfolio",
-      deployUrl: "#"
+      title: "Residência Tecnológica Porto Digital", 
+      category: "Front-End", 
+        desc: "Desafio proposto pela Claro: desenvolvimento de uma loja online completa em squad. Fui responsável pela tela de pedidos.",
+      image: "/claroresidencia.png", 
+      tags: ["Scrum", "Next.js", "Porto Digital"],
+      githubUrl: "https://github.com/Vanessa867/Front_Squad36_Claro/tree/lista-pedidos",
+      deployUrl: "https://front-squad36-claro.vercel.app/Login",
+      figmaUrl: "https://www.figma.com/proto/NQ9JUmDUlD8n29J66TEJse/Prot%C3%B3tipo_Squad36_Claro?node-id=2073-6432&p=f&t=ZJc8XHOY05jzQO8L-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      status: "Concluído"
     },
     { 
       id: 4, 
-      title: "API Diário Pessoal", 
-      category: "Back-End", 
-      desc: "Segurança e registros com Node.js e PostgreSQL.", 
-      image: "/projeto2.png", 
-      tags: ["Auth", "Express", "API"],
-      githubUrl: "https://github.com/AndrezaCarrilho/Projeto_AOS-diario-pessoal",
-      deployUrl: "https://projeto-aos-diario-pessoal.vercel.app/"
+      title: "NOW - Apoio à Ansiedade Social", 
+      category: "Mobile", 
+      desc: "App mobile de apoio a pessoas com ansiedade social, desenvolvido em React Native com Expo.",
+      image: "/luizeapp.png", 
+      tags: ["Expo", "React Native", "GitHub Copilot"],
+      githubUrl: "https://github.com/AndrezaCarrilho/NOW-Ansiedade-Social",
+      figmaUrl: "https://www.figma.com/design/VOAgkZCh1n8uKjKfakWTkO/Prot%C3%B3tipo---NOW?node-id=0-1&t=oXgljdQNpEKgZ9vs-1",
+      deployUrl: "#",
+      status: "Em desenvolvimento"
     }
   ];
 
@@ -148,7 +157,7 @@ export default function PortfolioPage() {
             </a>
             {/* BOTÃO DE DOWNLOAD DO CV */}
             <a 
-              href="/Andreza-Carrilho_CV.pdf" 
+              href="/Andreza_Carrilho_CV.pdf" 
               download 
               className="px-8 py-3 border-2 border-accent text-accent rounded-full font-bold hover:bg-accent hover:text-white transition-all flex items-center gap-2"
             >
@@ -165,7 +174,7 @@ export default function PortfolioPage() {
             <div className="absolute -inset-2 border border-accent/20 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
             <div className="relative p-3 bg-white shadow-2xl rounded-sm">
               <img 
-                src="/1000179770.png" 
+                src="./1000179770.jpg" 
                 alt="Andreza Carrilho" 
                 className="rounded-sm grayscale-[0.3] hover:grayscale-20 hover:scale-105 hover:shadow-[0_20px_50px_rgba(74,103,65,0.2)] transition-all duration-500"
               />
@@ -210,22 +219,40 @@ export default function PortfolioPage() {
                 <div className="p-10">
                   <span className="text-details font-bold text-[10px] uppercase tracking-widest">{project.category}</span>
                   <h3 className="text-2xl font-serif font-bold mt-2 mb-4 text-stone-800">{project.title}</h3>
-                  <p className="text-stone-500 mb-6 line-clamp-2">{project.desc}</p>
+                  <p className="text-stone-500 mb-6 line-clamp-3">{project.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags.map(tag => (
                       <span key={tag} className="text-[10px] font-bold border border-stone-200 px-3 py-1 rounded text-stone-400 uppercase">{tag}</span>
                     ))}
                   </div>
-                  <div className="flex gap-6 border-t border-stone-100 pt-6">
-                    <a href={project.githubUrl} target="_blank" className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
-                      <Github size={16}/> Código
-                    </a>
-                    {project.deployUrl !== "#" && (
-                      <a href={project.deployUrl} target="_blank" className="inline-flex items-center gap-2 text-accent font-bold text-sm hover:text-details transition-colors">
-                        <ExternalLink size={16}/> Visitar
-                      </a>
-                    )}
-                  </div>
+                  <div className="flex items-center gap-6 border-t border-stone-100 pt-6">
+  <span className={`text-xs font-bold px-3 py-1 rounded-full ${
+    project.status === "Em desenvolvimento" 
+      ? "bg-amber-100 text-amber-700" 
+      : "bg-green-100 text-green-700"
+  }`}>
+    {project.status}
+  </span>
+
+  <a href={project.githubUrl} target="_blank" className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
+    <Github size={16}/> Código
+  </a>
+  {project.figmaUrl && (
+    <a href={project.figmaUrl} target="_blank" className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
+      <Figma size={16}/> Figma
+    </a>
+  )}
+  {project.videoUrl && (
+  <a href={project.videoUrl} target="_blank" className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
+    <Youtube size={16}/> Demo
+  </a>
+)}
+  {project.deployUrl !== "#" && (
+    <a href={project.deployUrl} target="_blank" className="inline-flex items-center gap-2 text-accent font-bold text-sm hover:text-details transition-colors">
+      <ExternalLink size={16}/> Visitar
+    </a>
+  )}
+</div>
                 </div>
               </div>
             ))}
@@ -244,8 +271,8 @@ export default function PortfolioPage() {
                 <Sigma size={24} className="text-white/80" />
                 <span className="font-bold text-xs uppercase tracking-widest opacity-80">Destaque Acadêmico</span>
               </div>
-              <h4 className="text-2xl font-serif font-bold mb-2 text-white">Bootcamp GenAI & Dados</h4>
-              <p className="text-white/80 mb-4 font-medium">Bradesco & Fundação Bradesco • 52 horas de imersão em Inteligência Artificial e Ciência de Dados.</p>
+              <h4 className="text-2xl font-serif font-bold mb-2 text-white">Bootcamp GenAI, Dados & Cyber</h4>
+              <p className="text-white/80 mb-4 font-medium">Bradesco & Fundação Bradesco • 52 horas de imersão em Inteligência Artificial, Ciência de Dados e Cibersegurança.</p>
               <div className="flex gap-4 text-xs font-bold uppercase tracking-widest">
                 <span className="bg-white/20 px-3 py-1 rounded-full">Estatística</span>
                 <span className="bg-white/20 px-3 py-1 rounded-full">Python</span>
@@ -258,10 +285,8 @@ export default function PortfolioPage() {
           </div>
 
           {[
-            { title: "Python Developer", school: "DIO", date: "2024", icon: <Code2 size={18}/> },
-            { title: "Segurança Cibernética", school: "Cisco", date: "2024", icon: <Search size={18}/> },
-            { title: "Hackers do Bem", school: "Gov Federal", date: "2025", icon: <CheckCircle2 size={18}/> },
-            { title: "Analista de Dados", school: "Fund. Bradesco", date: "2024", icon: <Database size={18}/> }
+            { title: "Excel", school: "Santader Open Academy", date: "2026", icon: <Code2 size={18}/> },
+            { title: "Prompting Responsável", school: "Santader Open Academy", date: "2026", icon: <Search size={18}/> },
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-6 p-6 border-b border-stone-200 hover:bg-stone-50 transition-colors">
               <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center text-accent">
@@ -304,7 +329,7 @@ export default function PortfolioPage() {
               <span className="text-[10px] font-bold uppercase tracking-widest opacity-60 group-hover:opacity-100">GitHub</span>
             </a>
 
-            <a href="mailto:andrezaluiize@gmail.com" className="flex flex-col items-center gap-2 group">
+            <a href="mailto:andreza.carrilho@outlook.com" className="flex flex-col items-center gap-2 group">
               <div className="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:bg-accent transition-all">
                 <Mail size={20}/>
               </div>
@@ -312,7 +337,7 @@ export default function PortfolioPage() {
             </a>
           </div>
           <p className="text-[10px] text-stone-500 font-bold uppercase tracking-[0.4em]">
-            Andreza Carrilho &copy; MMXXVI • UNICAP • Porto Digital
+            Andreza Carrilho &copy; MMXXVI • UNICAP • UFPE
           </p>
         </div>
       </footer>
