@@ -165,7 +165,7 @@ export default function PortfolioPage() {
             <div className="absolute -inset-2 border border-accent/20 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
             <div className="relative p-3 bg-white shadow-2xl rounded-sm">
               <img 
-                src="/1000134004.png" 
+                src="/1000179770.png" 
                 alt="Andreza Carrilho" 
                 className="rounded-sm grayscale-[0.3] hover:grayscale-20 hover:scale-105 hover:shadow-[0_20px_50px_rgba(74,103,65,0.2)] transition-all duration-500"
               />
