@@ -89,8 +89,8 @@ export default function PortfolioPage() {
   id: 1, 
   title: "NOW — Apoio à Ansiedade Social", 
   category: "Mobile e Full-Stack", 
-  desc: "Aplicativo mobile focado em acessibilidade e saúde mental, projetado para auxiliar indivíduos com fobia social através de micro-desafios de exposição gradual e jornadas de dessensibilização segura. Desenvolvido sob a ótica de Product Discovery e metodologias ágeis.",
-  image: "/luizeapp.png", 
+  desc: "Aplicativo mobile focado em acessibilidade e saúde mental, projetado para auxiliar indivíduos com fobia social através de micro-desafios de exposição gradual e jornadas de dessensibilização segura.",
+  image: "/now.png", 
   tags: [
     "React Native", 
     "Expo", 
@@ -195,13 +195,14 @@ export default function PortfolioPage() {
           </div>
 
           <div>
-            <SectionTitle subtitle="Biografia" title="Entre a Lógica dos Dados e a Arte do Código" align="left" icon={<History size={16}/>} />
-            <div className="space-y-6 text-stone-600 text-lg leading-relaxed font-medium">
-              <p> Minha trajetória é definida pela convergência acadêmica e prática. Atualmente, curso <span className="text-stone-900 font-bold underline decoration-accent/30">Estatística na UFPE e Sistemas para Internet na UNICAP</span>, unindo o rigor analítico ao desenvolvimento de software. Como <span className="text-stone-900 font-bold underline decoration-accent/30">residente tecnológica no Porto Digital</span>, transformo esse conhecimento em soluções reais para empresas como Localiza, Claro, Santander e Adecco.
-              </p>
-              <p>
-                Proativa, analítica e em constante evolução. Focada em <span className="text-stone-900 font-bold underline decoration-accent/30">Dados e IA</span>, busco desafios que me permitam aplicar minha base estatística no desenvolvimento de soluções inovadoras. </p>
-              <div className="flex flex-wrap gap-2 pt-4">
+              <SectionTitle subtitle="Biografia" title="Entre Linhas de Código e Números" align="left" icon={<History size={16}/>} />
+  <div className="space-y-6 text-stone-600 text-lg leading-relaxed font-medium">
+    <p>
+      Sou estudante de <span className="text-stone-900 font-bold underline decoration-accent/30">Estatística na UFPE</span> e <span className="text-stone-900 font-bold underline decoration-accent/30">Sistemas para Internet na UNICAP</span>, bolsista de extensão e residente tecnológica no <span className="text-stone-900 font-bold underline decoration-accent/30">Porto Digital</span>.
+    </p>
+    <p>
+      Gosto de construir <span className="text-stone-900 font-bold underline decoration-accent/30">aplicativos, sites e análises</span> que resolvam problemas reais. Já trabalhei em projetos com empresas como <span className="text-stone-900 font-bold underline decoration-accent/30">Localiza, Claro e Santander</span> e sigo aprendendo todos os dias, seja no código, nos dados ou nas pessoas ao redor.
+    </p> <div className="flex flex-wrap gap-2 pt-4">
                 {["React", "Next.js", "Python", "SQL", "Scrum", "Node"].map(tag => (
                   <span key={tag} className="px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase tracking-tighter">
                     {tag}
