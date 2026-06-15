@@ -13,6 +13,8 @@ import {
   CheckCircle2,
   BookOpen,
   ExternalLink,
+  Layout,
+  FileText,
   User,
   History,
   Palette,
@@ -20,8 +22,8 @@ import {
   Search,
   Figma,
   Sigma,
-  MessageCircle, // Ícone para WhatsApp
-  FileDown      // Ícone para Download do CV
+  MessageCircle,
+  FileDown      
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -83,16 +85,28 @@ export default function PortfolioPage() {
   }, []);
 
   const projects = [
-    { 
-      id: 1, 
-      title: "GestCond Web", 
-      category: "Front-End", 
-      desc: "Plataforma web de gestão condominial desenvolvida como projeto integrador na UNICAP. Front-end com Next.js, TypeScript e Tailwind CSS.", 
-      image: "/projeto.png", 
-      tags: ["React", "Next.js", "Vercel"],
-      githubUrl: "https://github.com/AndrezaCarrilho/admin-condominio",
-      deployUrl: "https://admin-condominio-fvs8.vercel.app/",
-      status: "Concluído" 
+    {  
+  id: 1, 
+  title: "NOW — Apoio à Ansiedade Social", 
+  category: "Mobile e Full-Stack", 
+  desc: "Aplicativo mobile focado em acessibilidade e saúde mental, projetado para auxiliar indivíduos com fobia social através de micro-desafios de exposição gradual e jornadas de dessensibilização segura. Desenvolvido sob a ótica de Product Discovery e metodologias ágeis.",
+  image: "/luizeapp.png", 
+  tags: [
+    "React Native", 
+    "Expo", 
+    "Node.js", 
+    "Express", 
+    "PostgreSQL", 
+    "Figma (UI/UX)", 
+    "Miro (Agile)", 
+    "LaTeX"
+  ],
+      githubUrl: "https://github.com/AndrezaCarrilho/NOW-Ansiedade-Social",
+      figmaUrl: "https://www.figma.com/design/VOAgkZCh1n8uKjKfakWTkO/Prot%C3%B3tipo---NOW?node-id=0-1&t=8H93irM4ccCrjmxl-1",
+      miroUrl: "https://miro.com/app/board/uXjVHF_S5r8=/?share_link_id=576583817571",
+      docsUrl: "./NOW_Documentacao.pdf",
+      deployUrl: "#",
+      status: "Em desenvolvimento"
     },
     { 
       id: 2, 
@@ -108,6 +122,17 @@ export default function PortfolioPage() {
     },
     { 
       id: 3, 
+      title: "GestCond Web", 
+      category: "Front-End", 
+      desc: "Plataforma web de gestão condominial desenvolvida como projeto integrador na UNICAP. Front-end com Next.js, TypeScript e Tailwind CSS.", 
+      image: "/projeto.png", 
+      tags: ["React", "Next.js", "Vercel"],
+      githubUrl: "https://github.com/AndrezaCarrilho/admin-condominio",
+      deployUrl: "https://admin-condominio-fvs8.vercel.app/",
+      status: "Concluído" 
+    },
+    { 
+      id: 4, 
       title: "Residência Tecnológica Porto Digital", 
       category: "Front-End", 
         desc: "Desafio proposto pela Claro: desenvolvimento de uma loja online completa em squad. Fui responsável pela tela de pedidos.",
@@ -117,18 +142,6 @@ export default function PortfolioPage() {
       deployUrl: "https://front-squad36-claro.vercel.app/Login",
       figmaUrl: "https://www.figma.com/proto/NQ9JUmDUlD8n29J66TEJse/Prot%C3%B3tipo_Squad36_Claro?node-id=2073-6432&p=f&t=ZJc8XHOY05jzQO8L-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
       status: "Concluído"
-    },
-    { 
-      id: 4, 
-      title: "NOW - Apoio à Ansiedade Social", 
-      category: "Mobile", 
-      desc: "App mobile de apoio a pessoas com ansiedade social, desenvolvido em React Native com Expo.",
-      image: "/luizeapp.png", 
-      tags: ["Expo", "React Native", "GitHub Copilot"],
-      githubUrl: "https://github.com/AndrezaCarrilho/NOW-Ansiedade-Social",
-      figmaUrl: "https://www.figma.com/design/VOAgkZCh1n8uKjKfakWTkO/Prot%C3%B3tipo---NOW?node-id=0-1&t=oXgljdQNpEKgZ9vs-1",
-      deployUrl: "#",
-      status: "Em desenvolvimento"
     }
   ];
 
@@ -247,6 +260,19 @@ export default function PortfolioPage() {
     <Youtube size={16}/> Demo
   </a>
 )}
+
+  {project.miroUrl && (
+    <a href={project.miroUrl} target="_blank" className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
+      <Layout size={16}/> Miro
+    </a>
+  )}
+
+ {project.docsUrl && (
+  <a href={project.docsUrl} download className="inline-flex items-center gap-2 text-stone-900 font-bold text-sm hover:text-accent transition-colors">
+    <FileText size={26}/> Docs (em andamento)
+  </a>
+)}
+
   {project.deployUrl !== "#" && (
     <a href={project.deployUrl} target="_blank" className="inline-flex items-center gap-2 text-accent font-bold text-sm hover:text-details transition-colors">
       <ExternalLink size={16}/> Visitar
